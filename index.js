@@ -1,7 +1,10 @@
+require('dotenv').config()
 const cors = require("cors");
 const express = require("express");
 // TODO add a stripe key require : 
-const stripe = require("stripe")("sk_test_51HxBZ3IPBvrCL5GdlBs0GBBN1OI77D9iv1FrN86DCX8VfKyTGxdioJ5eUvFB0SzYHugwIEZLWNYVger5TGcLfPJg00gK1wrRis")
+const stripeKey = process.env.STRIPE_SECRET_KEY
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
+
 const {
   v4: uuidv4
 } = require("uuid");
