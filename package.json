@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for serotoninene's shop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Serotoninene/serotoninene_backend.git"
+  },
+  "author": "alexandre pujol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Serotoninene/serotoninene_backend/issues"
+  },
+  "homepage": "https://github.com/Serotoninene/serotoninene_backend#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "stripe": "^8.195.0",
+    "uuid": "^8.3.2"
+  }
+}
