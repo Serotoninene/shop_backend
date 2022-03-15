@@ -2,7 +2,7 @@ require('dotenv').config()
 const cors = require("cors");
 const express = require("express");
 
-const PORT = process.env.PORT || 5000; // use either the host env var port (PORT) provided by Heroku or the local port (5000) on your machine
+const PORT = process.env.PORT || 8282; // use either the host env var port (PORT) provided by Heroku or the local port (5000) on your machine
 const stripeKey = process.env.STRIPE_SECRET_KEY
 const stripe = require("stripe")(stripeKey)
 
@@ -54,6 +54,6 @@ app.post("/payment", (req, res) => {
 });
 
 // listen
-app.listen(8282, () => {
-  console.log("Listenning to port 8282")
+app.listen(PORT, () => {
+  console.log(PORT)
 })
