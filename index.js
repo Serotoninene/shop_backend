@@ -54,6 +54,6 @@ app.post("/payment", (req, res) => {
 });
 
 // listen
-app.listen(8282, () => {
+app.listen(8282, "0.0.0.0", () => {
   console.log("Listenning to port 8282")
 })
