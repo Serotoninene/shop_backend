@@ -4,7 +4,7 @@ const express = require("express");
 
 const PORT = process.env.PORT || 5000; // use either the host env var port (PORT) provided by Heroku or the local port (5000) on your machine
 const stripeKey = process.env.STRIPE_SECRET_KEY
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
+const stripe = require("stripe")(stripeKey)
 
 const {
   v4: uuidv4
@@ -17,10 +17,6 @@ app.use(express.json());
 app.use(cors());
 
 // routes
-app.get("/", (req, res) => {
-  res.send("Hello world");
-});
-
 app.post("/payment", (req, res) => {
   const {
     product,
@@ -58,6 +54,6 @@ app.post("/payment", (req, res) => {
 });
 
 // listen
-app.listen(PORT, () => {
+app.listen(8282, () => {
   console.log("Listenning to port 8282")
 })
