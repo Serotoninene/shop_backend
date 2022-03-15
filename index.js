@@ -4,7 +4,7 @@ const express = require("express");
 
 const PORT = process.env.PORT || 8282; // use either the host env var port (PORT) provided by Heroku or the local port (5000) on your machine
 const stripeKey = process.env.STRIPE_SECRET_KEY
-const stripe = require("stripe")(stripeKey)
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
 
 const {
   v4: uuidv4
