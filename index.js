@@ -2,7 +2,7 @@ require('dotenv').config()
 const cors = require("cors");
 const express = require("express");
 
-const PORT = process.env.PORT || 8080; // use either the host env var port (PORT) provided by Heroku or the local port (5000) on your machine
+const PORT = process.env.PORT || 80; // use either the host env var port (PORT) provided by Heroku or the local port (5000) on your machine
 const stripeKey = process.env.STRIPE_SECRET_KEY
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
 
