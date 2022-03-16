@@ -2,7 +2,7 @@ require('dotenv').config()
 const cors = require("cors");
 const express = require("express");
 
-const PORT = process.env.PORT || 8282; // use either the host env var port (PORT) provided by Heroku or the local port (5000) on your machine
+const PORT = process.env.PORT || 8080; // use either the host env var port (PORT) provided by Heroku or the local port (5000) on your machine
 const stripeKey = process.env.STRIPE_SECRET_KEY
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
 
@@ -17,15 +17,16 @@ app.use(express.json());
 app.use(cors());
 
 // routes
+app.get("/", (req, res) => {
+  res.send("Hello")
+})
+
 app.post("/payment", (req, res) => {
   const {
     product,
     token
   } = req.body;
-  console.log("Product : ", product)
-  console.log("Price : ", product.price)
   const idempotencyKey = uuidv4()
-
   return stripe.customers.create({
     email: token.email,
     source: token.id
